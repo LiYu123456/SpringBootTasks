@@ -119,6 +119,14 @@
             <artifactId>poi-scratchpad</artifactId>
             <version>${poi.version}</version>
         </dependency>
+        <!--dev-tools依赖包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+            <scope>true</scope>
+        </dependency>
+
 
     </dependencies>
 
@@ -127,6 +135,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--如果每个该配置,devTools不会起作用,即不会restart-->
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
     </build>
