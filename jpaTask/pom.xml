@@ -9,8 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fastJsonTask</artifactId>
+    <artifactId>jpaTask</artifactId>
+
+    <dependencies>
 
 
-
+    </dependencies>
 </project>

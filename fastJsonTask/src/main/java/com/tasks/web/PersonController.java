@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 @RestController
 public class PersonController {
 
@@ -14,9 +16,11 @@ public class PersonController {
     public Person getPersonJSON(){
         Person person=new Person();
         person.setPId("1");
-        person.setName("张飞");
-        person.setAge(10);
+        //person.setName("张飞");
+        person.setAge(20);
         person.setGender("女");
+        person.setRemark("备注信息");
+        person.setCreateDate(new Date());
         Address address=new Address();
         address.setProvince("北京");
         address.setCity("昌平区");
