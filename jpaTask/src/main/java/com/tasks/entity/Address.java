@@ -5,7 +5,6 @@ import lombok.Data;
 import javax.persistence.Entity;
 
 @Data
-@Entity
 public class Address {
     private String aId;
     private String province;
