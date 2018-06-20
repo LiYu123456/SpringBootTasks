@@ -7,6 +7,7 @@ import java.util.Date;
 
 @Data
 @Entity
+@Table(name = "person")
 public class Person {
     /**
      * 指定主键,并制定主键的生成策略为自动
@@ -22,5 +23,7 @@ public class Person {
     private String remark;
     private String gender;
     private Date createDate;
-//    private Address address;
+    @OneToOne(cascade = {CascadeType.ALL},optional = false)
+    @JoinColumn(name="address_id",referencedColumnName = "id",unique = true)
+    private Address address;
 }

@@ -12,6 +12,7 @@
         <module>fastJsonTask</module>
         <module>jpaTask</module>
         <module>jpaTask</module>
+        <module>jdbcTemplateTask</module>
     </modules>
 
     <parent>
@@ -119,6 +120,8 @@
                 <!--如果每个该配置,devTools不会起作用,即不会restart-->
                 <configuration>
                     <fork>true</fork>
+                    <!--支持静态资源热部署-->
+                    <addResources>true</addResources>
                 </configuration>
             </plugin>
         </plugins>
