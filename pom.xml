@@ -13,6 +13,7 @@
         <module>jpaTask</module>
         <module>jpaTask</module>
         <module>jdbcTemplateTask</module>
+        <module>globalException</module>
     </modules>
 
     <parent>
