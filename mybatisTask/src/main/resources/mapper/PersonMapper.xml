@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tasks.mapper.PersonMapper">
+    <select id="selectPersonByName" parameterType="string" resultMap="personResult">
+        select * from person where person_name like CONCAT('%',#{name},'%')
+    </select>
+    <!--这个resulMap可以定义字段和属性的映射关系，可以只定义那些无法对应的，能对应自动对应的可以
+    自动对应无需定义-->
+    <resultMap id="personResult" type="com.tasks.entity.Person">
+       <!-- <id property="pId" column="p_id" javaType="integer"></id>-->
+        <result property="personName" column="person_name"></result>
+        <result property="personAge" column="person_age"></result>
+        <result property="gender" column="gender"></result>
+        <result property="remark" column="remark"></result>
+    </resultMap>
+    <!--自动返回生成的ID-->
+    <insert id="save2" useGeneratedKeys="true" keyProperty="pId" keyColumn="p_id">
+        insert into person(person_name,person_age,gender,remark)values(#{personName},#{personAge},#{gender},#{remark})
+    </insert>
+</mapper>
