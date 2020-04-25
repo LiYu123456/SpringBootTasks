@@ -1,9 +1,10 @@
 package com.tasks.web;
 
 import com.tasks.entity.Person;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/globalException")
@@ -18,5 +19,10 @@ public class PersonController {
         person.setGender("female");
         throw new Exception("123");
 
+    }
+
+    @PostMapping("/savePerson")
+    public Person savePerson(@RequestBody @Valid Person person){
+        return person;
     }
 }
